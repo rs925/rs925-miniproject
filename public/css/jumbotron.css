@@ -1,0 +1,14 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+    padding-top: 3.5rem;
+}
+table, th{
+    text-align: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+td {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
