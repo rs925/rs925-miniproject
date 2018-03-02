@@ -1,29 +1,47 @@
-@extends('Layouts.default')
+@extends('layouts.default')
 
 @section('content')
 
-    <div class="card mt-3">
-        <div class="card-title pl-3 pr-2"><h1>Contact.</h1>
-            <p class="lead">Please Use This form to contact site owner.</p></div>
 
-        <div class="card-body">
+    <h1>Contact</h1>
+    <form role="form" id="contact-form" class="contact-form" method="POST" action="{{route('contact.store')}}">
+        {{csrf_field()}}
 
-            <form action="/contact" method="post">
-                {{ csrf_field() }}
+        <div class="row">
+            <div class="col-md-6">
                 <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <input type="text" class="form-control" name="name" autocomplete="off" id="Name" placeholder="Name">
                 </div>
+            </div>
+            <div class="col-md-6">
                 <div class="form-group">
-                    <label for="email">Subject</label>
-                    <input name="email"  class="form-control" id="subject" placeholder="Enter Subject">
                 </div>
+            </div>
+            <div class="col-md-6">
                 <div class="form-group">
-                    <label for="body">Contact Message</label>
-                    <textarea name="body" class="form-control" id="body" rows="3" placeholder="Enter Your Message"></textarea>
+                    <input type="email" class="form-control" name="email" autocomplete="off" id="email"
+                           placeholder="E-mail">
                 </div>
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
-            </form>
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea class="form-control textarea" rows="3" name="subject" id="subject"
+                              placeholder="Subject"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea class="form-control textarea" rows="3" name="Message" id="Message"
+                              placeholder="Message"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="submit" class="btn main-btn pull-right">Send a message</button>
+            </div>
+        </div>
+    </form>
 @endsection

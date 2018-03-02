@@ -30,6 +30,11 @@ class PagesController extends Controller
         return view('pages.signup');
     }
 
+    function vm()
+    {
+        return view('pages.vm');
+    }
+
 
     function store(Request $request)
     {
