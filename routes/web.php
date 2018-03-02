@@ -20,12 +20,12 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('Pages.contact');
 });
-Route::post('/contact', function () {
+/*Route::post('/contact', function () {
 
     $data = request() -> all();
     echo "Email: " . $data['email'] . '<br>';
     echo "Message: " . $data['body'] ;
-});
+});*/
 Route::get('/signup', function () {
     return view('Pages.signup');
 });
