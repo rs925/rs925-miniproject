@@ -1,4 +1,3 @@
-
 <?php
 
 /*
@@ -12,13 +11,32 @@
 |
 */
 
-Route::get('/', 'PagesController@index')->name('index');
+Route::get('/', function () {
+    return view('Pages.index');
+});
+Route::get('/about', function () {
+    return view('Pages.about');
+});
+Route::get('/contact', function () {
+    return view('Pages.contact');
+});
+Route::post('/contact', function () {
 
-Route::get('/about', 'PagesController@about')->name('about');
-
-Route::get('/contact', 'PagesController@contact')->name('contact');
-Route::get('/signup', 'PagesController@signup')->name('signup');
-Route::get('/signin', 'PagesController@signin')->name('signin');
-Route::get('/vm', 'PagesController@vm')->name('vm');
+    $data = request() -> all();
+    echo "Email: " . $data['email'] . '<br>';
+    echo "Message: " . $data['body'] ;
+});
+Route::get('/signup', function () {
+    return view('Pages.signup');
+});
+Route::get('/login', function () {
+    return view('Pages.login');
+});
+Route::get('/vm', function () {
+    return view('Pages.vm');
+});
+Route::get('/card', function () {
+    return view('Pages.card');
+});
 Route::post('/contact', 'PagesController@store')->name('contact.store');
 Route::get('/thanks/{name}', 'PagesController@thanks')->name('thanks');
