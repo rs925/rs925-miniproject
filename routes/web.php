@@ -38,3 +38,5 @@ Route::get('/vm', function () {
 Route::get('/card', function () {
     return view('Pages.card');
 });
+Route::post('/contact', 'PagesController@store')->name('contact.store');
+Route::get('/thanks/{name}', 'PagesController@thanks')->name('thanks');
